@@ -6,11 +6,13 @@ interface Props{
 
 const Header:React.FC<Props> = ({ appName }) => {
     return (
-        <div>
+        <header>
             <h1>{appName}</h1>
-            <span>About</span>
-            <span>Contacts</span>
-        </div>
+            <ul className='nav-items'>
+                <li>About</li>
+                <li>Contacts</li>
+            </ul>
+        </header>
     )
 }
 

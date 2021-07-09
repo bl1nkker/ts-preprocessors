@@ -1,8 +1,8 @@
 import React from "react";
-import { IStudent } from "../interfaces";
+import { StudentType } from "../types";
 
 interface Props{
-    student: IStudent,
+    student: StudentType,
     deleteStudent: (studentId:number | undefined) => void
 }
 

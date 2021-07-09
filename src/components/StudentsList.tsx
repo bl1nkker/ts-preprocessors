@@ -1,10 +1,10 @@
 import React from 'react'
-import { IStudent } from '../interfaces'
+import { StudentType } from '../types'
 import Student from './Student'
 
 
 interface Props{
-    students: IStudent[],
+    students: StudentType[],
     deleteStudent: (studentId: number|undefined) => void
 }
 

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { IStudent } from "../interfaces";
+import { StudentType } from "../types";
 
 interface Props{
-    addStudent: (student:IStudent) => void
+    addStudent: (student:StudentType) => void
 }
 
 const StudentForm:React.FC<Props> = ({ addStudent }) =>{
-    const [newStudent, setNewStudent] = useState<IStudent>({ name: '', specialty:'', gpa:'' })
+    const [newStudent, setNewStudent] = useState<StudentType>({ name: '', specialty:'', gpa:'' })
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
         setNewStudent({...newStudent, [event.target.id]: event.target.value})
@@ -19,13 +19,24 @@ const StudentForm:React.FC<Props> = ({ addStudent }) =>{
     }
     return (
     <form>
-        <label>Name</label>
-        <input id='name' value={newStudent.name} onChange={handleChange}/>
-        <label>Specialty</label>
-        <input id='specialty' value={newStudent?.specialty} onChange={handleChange}/>
-        <label>GPA</label>
-        <input id='gpa' value={newStudent?.gpa} onChange={handleChange}/>
-        <button onClick={handleAddStudent}>Add student</button>
+        <div className='form-field'>
+            <label>Name</label>
+            <input id='name' value={newStudent.name} onChange={handleChange}/>
+        </div>
+        
+        <div className='form-field'>
+            <label>Specialty</label>
+            <input id='specialty' value={newStudent?.specialty} onChange={handleChange}/>
+        </div>
+        <div className='form-field'>
+            <label>GPA</label>
+            <input id='gpa' value={newStudent?.gpa} onChange={handleChange}/>
+        </div>
+
+        <div className='form-actions'>
+            <button onClick={handleAddStudent}>Add student</button>
+        </div>
+        
     </form>)
 }
 

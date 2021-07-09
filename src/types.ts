@@ -1,4 +1,4 @@
-export interface IStudent{
+export type StudentType = {
     name:string,
     id?: number,
     gpa:string,

@@ -1,0 +1,16 @@
+$primary-color: rgb(114, 173, 250);
+$secondary-color: rgb(255, 201, 100);
+$light-color: white;
+
+@function set-text-color($color){
+    @if ($color == $primary-color) {
+        @return $secondary-color;
+    } @else{
+        @return $primary-color;
+    }
+}
+
+@mixin set-background($color){
+    background-color: $color;
+    color: set-text-color($color)
+}
