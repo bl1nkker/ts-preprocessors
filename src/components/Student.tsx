@@ -11,11 +11,17 @@ const Student:React.FC<Props> = ({ student, deleteStudent }) =>{
         deleteStudent(student.id)
     }
     return (
-    <div>
-        <h3>{student.name}</h3>
-        <span>{student.specialty}</span>
-        <span>{student.gpa}</span>
-        <button onClick={handleDeleteStudent}>Delete student</button>
+    <div className='student-card'>
+        <div className='student-card-title'>
+            <h3 className='student-card-name'>{student.name}</h3>
+        </div>
+        <div className='student-card-info'>
+            <span className='student-card-specialty'>{student.specialty}</span>
+            <span className='student-card-gpa'>{student.gpa}</span>
+        </div>
+        <div className='student-card-actions'>
+            <button className='delete-button' onClick={handleDeleteStudent}>Delete student</button>
+        </div>
     </div>)
 }
 

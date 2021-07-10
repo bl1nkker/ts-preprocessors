@@ -1,6 +1,13 @@
-$primary-color: rgb(114, 173, 250);
-$secondary-color: rgb(255, 201, 100);
+$primary-color: rgb(81, 171, 255);
+$secondary-color: rgb(190, 253, 117);
+
+
 $light-color: white;
+$shadow-color: rgba(128, 128, 128, 0.274);
+$delete-color: rgb(253, 17, 127);
+
+$font-primary-color: rgba(255, 255, 255, 0.726);
+$font-stack: 'Dancing Script', cursive;
 
 @function set-text-color($color){
     @if ($color == $primary-color) {
@@ -10,7 +17,6 @@ $light-color: white;
     }
 }
 
-@mixin set-background($color){
-    background-color: $color;
-    color: set-text-color($color)
+@function set-alpha-color($color){
+    @return change-color($color: $color, $alpha: 0.15)
 }

@@ -1,5 +1,15 @@
-@mixin flex-box($jc, $ai) {
+@mixin flex-box($jc, $ai, $direction) {
     display: flex;
     justify-content: $jc;
     align-items: $ai;
+    flex-direction: $direction;
+}
+
+@mixin box-shadow(){
+    box-shadow: 0 0 5px $shadow-color;
+}
+
+@mixin set-background($color){
+    background-color: $color;
+    color: set-text-color($color)
 }

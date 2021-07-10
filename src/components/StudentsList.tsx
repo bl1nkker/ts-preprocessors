@@ -10,7 +10,7 @@ interface Props{
 
 const StudentsList:React.FC<Props> = ({ students, deleteStudent }) =>{
     return (
-    <div>
+    <div className='students-list'>
         {students.map((student, key) => <Student key={key} deleteStudent={deleteStudent} student={student}/>)}
     </div>)
 }

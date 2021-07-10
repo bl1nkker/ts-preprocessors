@@ -7,7 +7,7 @@ interface Props{
 const Header:React.FC<Props> = ({ appName }) => {
     return (
         <header>
-            <h1>{appName}</h1>
+            <h1 className='app-name'>{appName}</h1>
             <ul className='nav-items'>
                 <li>About</li>
                 <li>Contacts</li>
