@@ -45,17 +45,21 @@ header{
 
 .app__content{
     margin: 2em auto;
-    @include flex-box(space-between, center, row);
+    @include flex-box(space-between, flex-start, row);
     width: 80%;
+    height: 100vh;
 
+    .add{background-color: change-color($color: $secondary-color, $alpha: 0.3);}
+    .update{background-color: change-color($color: $update-color, $alpha: 0.3);}
     form{
         @include flex-box(space-evenly, center, column);
-        background-color: change-color($color: $secondary-color, $alpha: 0.3);
+        
         width: 30%;
         height: 300px;
         padding: 5px 0;
         border-radius: 10px;
         position: relative;
+        transition: .5s ease-in-out;
 
         .form-field{
             width: 80%;
@@ -106,7 +110,7 @@ header{
             padding: 1em 20px;
             margin-top: 1em;
             border-radius: 10px;
-            transition: transform .5s ease-in-out;
+            
             @include flex-box(space-between, center, column);
             &-title{
                 font-size: 24px;
@@ -118,12 +122,10 @@ header{
             }
 
             &-actions{
-                .delete-button{
-                    background-color: change-color($delete-color, $alpha:.7);
-                }
-            }
-            &:hover{
-                transform: scale(1.1);
+                @include flex-box(space-evenly,center,row);
+                width: 100%;
+                .delete-button{@include card-button($delete-color)}
+                .update-button{@include card-button($update-color)}
             }
         }
     }

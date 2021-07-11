@@ -14,6 +14,8 @@ const studentsList:StudentType[] = [
 
 function App() {
   const [students, setStudents] = useState<StudentType[]>(studentsList)
+  const [studentToUpdate, setStudentToUpdate] = useState<StudentType|null>(null)
+
   const addStudent = (student:StudentType) =>{
     setStudents([...students, student])
   }
@@ -21,14 +23,17 @@ function App() {
     const updatedStudensList:StudentType[] = students.filter((student:StudentType) => student.id !== studentId)
     setStudents([...updatedStudensList])
   }
+  const updateStudent = (updatedStudent:StudentType) =>{
+    setStudents(students.map( (student:StudentType) => student.id === updatedStudent.id ? updatedStudent : student ))
+  }
   return (
     <div className="app">
 
       <Header appName='Student App TS'/>
 
       <div className='app__content'>
-        <StudentForm addStudent={addStudent}/>
-        <StudentsList students={students} deleteStudent={deleteStudent}/>
+        <StudentForm setStudentToUpdate={setStudentToUpdate} updateStudent={updateStudent} studentToUpdate={studentToUpdate} addStudent={addStudent}/>
+        <StudentsList setStudentToUpdate={setStudentToUpdate} students={students} deleteStudent={deleteStudent}/>
       </div>
       
     </div>

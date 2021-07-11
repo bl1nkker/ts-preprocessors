@@ -1,40 +1,56 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StudentType } from "../types";
 
 interface Props{
-    addStudent: (student:StudentType) => void
+    updateStudent: (updatedStudent: StudentType) => void,
+    setStudentToUpdate: React.Dispatch<React.SetStateAction<StudentType | null>>,
+    addStudent: (student:StudentType) => void,
+    studentToUpdate: StudentType | null
 }
 
-const StudentForm:React.FC<Props> = ({ addStudent }) =>{
-    const [newStudent, setNewStudent] = useState<StudentType>({ name: '', specialty:'', gpa:'' })
+const StudentForm:React.FC<Props> = ({ addStudent, studentToUpdate, updateStudent, setStudentToUpdate }) =>{
+    const [formData, setFormData] = useState<StudentType>({ name: '', specialty:'', gpa:'' })
+
+    useEffect(() =>{
+        if (studentToUpdate !== null) setFormData(studentToUpdate)
+    }, [studentToUpdate])
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
-        setNewStudent({...newStudent, [event.target.id]: event.target.value})
+        setFormData({...formData, [event.target.id]: event.target.value})
     }
 
-    const handleAddStudent = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
+    const handleButtonPress = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
         event.preventDefault()
-        addStudent({...newStudent, id: new Date().getTime()})
-        setNewStudent({ name:'', specialty:'', gpa:''})
+        if (studentToUpdate !== null){
+            // update
+            updateStudent(formData)
+            setStudentToUpdate(null)
+        } else{
+            // create
+            addStudent({...formData, id: new Date().getTime()})
+        }
+        
+        setFormData({ name:'', specialty:'', gpa:''})
     }
+
     return (
-    <form>
+    <form className={studentToUpdate !== null ? "update" : 'add'}>
         <div className='form-field'>
             <label>Name</label>
-            <input id='name' value={newStudent.name} onChange={handleChange}/>
+            <input id='name' value={formData.name} onChange={handleChange}/>
         </div>
         
         <div className='form-field'>
             <label>Specialty</label>
-            <input id='specialty' value={newStudent?.specialty} onChange={handleChange}/>
+            <input id='specialty' value={formData?.specialty} onChange={handleChange}/>
         </div>
         <div className='form-field'>
             <label>GPA</label>
-            <input id='gpa' value={newStudent?.gpa} onChange={handleChange}/>
+            <input id='gpa' value={formData?.gpa} onChange={handleChange}/>
         </div>
 
         <div className='form-actions'>
-            <button onClick={handleAddStudent}>Add student</button>
+            <button onClick={handleButtonPress}>{studentToUpdate !== null ? 'Update student':"Add student"}</button>
         </div>
         
     </form>)

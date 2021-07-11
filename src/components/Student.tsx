@@ -3,13 +3,19 @@ import { StudentType } from "../types";
 
 interface Props{
     student: StudentType,
-    deleteStudent: (studentId:number | undefined) => void
+    deleteStudent: (studentId:number | undefined) => void,
+    setStudentToUpdate: React.Dispatch<React.SetStateAction<StudentType | null>>,
 }
 
-const Student:React.FC<Props> = ({ student, deleteStudent }) =>{
+const Student:React.FC<Props> = ({ student, deleteStudent, setStudentToUpdate}) =>{
     const handleDeleteStudent = () =>{
         deleteStudent(student.id)
     }
+
+    const handleSetStudentToUpdate = () =>{
+        setStudentToUpdate(student)
+    }
+
     return (
     <div className='student-card'>
         <div className='student-card-title'>
@@ -20,7 +26,8 @@ const Student:React.FC<Props> = ({ student, deleteStudent }) =>{
             <span className='student-card-gpa'>{student.gpa}</span>
         </div>
         <div className='student-card-actions'>
-            <button className='delete-button' onClick={handleDeleteStudent}>Delete student</button>
+            <button className='update-button' onClick={handleSetStudentToUpdate}>Update</button>
+            <button className='delete-button' onClick={handleDeleteStudent}>Delete</button>
         </div>
     </div>)
 }
