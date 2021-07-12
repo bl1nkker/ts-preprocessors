@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100;200;300;400;500;600;700&display=swap');
+
+$primary-color: rgb(81, 156, 255);
+$secondary-color: rgb(76, 238, 149);
+$select-color: rgb(255, 223, 82);
+
+$glass-color: rgba(255, 255, 255, 0.5);
+$border-color: white;
+
+$font-primary-color: rgb(255, 255, 255);
+$font-stack: 'Encode Sans SC', sans-serif;
+
+/* Buttons */
+button, .button{
+    border: none;
+}
