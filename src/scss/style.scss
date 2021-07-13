@@ -1,7 +1,12 @@
-@import 'config';
-@import 'mixins';
-@import 'animations';
+/* Utils */
+@import 'utils/config';
+@import 'utils/mixins';
+@import 'utils/animations';
 
+/* Combinated */
+@import 'startPage';
+@import 'teacherPage';
+@import 'navbar';
 
 *{
     padding: 0;
@@ -9,7 +14,7 @@
 }
 
 html{
-    background-image: linear-gradient(60deg, $secondary-color 30%, $primary-color);
+    background-image: linear-gradient(60deg, $primary-green 30%, $primary-blue);
     background-size: cover;
     font-family: $font-stack;
     width: 100vw;
@@ -18,80 +23,13 @@ html{
 
 .modal{
     @include flex-box(row, center, center);
-    position: fixed;
-    top:50%;
-    left:50%;
+    position: relative;
+    top:50vh;
+    left:50vw;
     transform: translate(-50%, -50%);
-    width: 80%;
-    height: 90%;
+    width: 95vw;
+    height: 90vh;
     background-color: $glass-color;
     border-radius: 30px;
-    box-shadow: inset 0 0 10px $border-color;
     // animation: modal-anim infinite 2s ease-in-out;
-}
-
-.login__container{
-    @include flex-box(column, space-between, center);
-    width: 90%;
-    height: 70%;
-    .title{
-        span{
-            text-align: center;
-            font-size: 48px;
-            font-weight: 300;
-            color: $font-primary-color;
-        }
-    }
-    .cards__container{
-        /* Change this to columns in media */
-        @include flex-box(row, space-around, center);
-        width: 100%;
-        height: 50%;
-        .card{
-            @include flex-box(column, space-around, center);
-            height: 17em;
-            width: 17em;
-            border-radius: 20px;
-            box-shadow: 0 0 5px $border-color;
-            &:first-child{
-                @include card-background($primary-color);
-                button{background-color: $secondary-color;}
-            }
-            &:nth-child(2){
-                @include card-background($secondary-color);
-                button{background-color: $primary-color;}
-            }
-            &-image{
-                img{
-                    width: 100px;
-                    height: 100px;
-                    opacity: .3;
-                    transition: .3s ease-in-out;
-                }
-            }
-            &-info{
-                width: 80%;
-                p{
-                    color: $font-primary-color;
-                    font-weight: 200;
-                    font-size: 14px;
-                    text-align: center;
-                }
-            }
-            &-actions{
-                button{
-                    padding: 10px 2em;
-                    border-radius: 10px;
-                    color: $font-primary-color;
-                    opacity: .3;
-                    transition: .3s ease-in-out;
-                    &:hover{
-                        cursor: pointer;
-                        background-color: $select-color;
-                    }
-                }
-            }
-            
-        }
-    }
 }
