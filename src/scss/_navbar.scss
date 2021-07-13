@@ -1,0 +1,36 @@
+.navbar__container{
+    @include flex-box(column, flex-start, flex-start);
+    // border: 1px solid black;
+    width: 15%;
+    height: 70%;
+    list-style: none;
+    &-item{
+        width: 80%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 10px;
+        transition: .3s ease-in-out;
+        a{
+            @include flex-box(row, flex-start, center);
+            text-decoration: none;
+            .item-icon, span{
+                color: darken($color: $primary-green, $amount: 10);
+                transition: .2s ease-in-out;
+            }
+            span{margin-left: 10px;}
+        }
+        &.active{
+            background-color: $glass-second-color;
+            .item-icon, span{
+                color: darken($color: $primary-blue, $amount: 10);
+                transition: .2s ease-in-out;}
+        }
+
+        &:hover{
+            background-color: $glass-second-color;
+            .item-icon, span{
+                color: darken($color: $primary-yellow, $amount: 20);
+            }
+        }
+    }
+}

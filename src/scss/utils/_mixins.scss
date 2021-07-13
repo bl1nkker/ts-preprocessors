@@ -11,8 +11,6 @@
     &:hover{
         background-color: change-color($color: $color, $alpha: 0.9);
         transform: scale(1.05);
-        img{opacity: 1;}
-        button{opacity: 1;}
+        img, button,h3, p{opacity: 1;}
     }
-    
 }
