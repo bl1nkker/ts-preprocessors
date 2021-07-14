@@ -1,15 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 $primary-blue: #5FB2FF;
 $primary-green: #51DF70;
 $primary-yellow: #FFDC62;
+
+$font-size-big: 48px;
+$font-size-title: 42px;
+$font-size-subtitle: 30px;
+
+$font-size-headers: 24px;
+$font-size-subheaders: 16px;
+$font-size-text: 12px;
+
 
 $glass-color: rgba(255, 255, 255, 0.3);
 $glass-second-color:rgba(255, 255, 255, 0.521);
 $border-color: white;
 
 $font-primary-color: rgb(255, 255, 255);
-$font-stack: 'Encode Sans SC', sans-serif;
+$font-stack: 'Encode Sans', sans-serif;
 
 /* Buttons */
 button, .button{

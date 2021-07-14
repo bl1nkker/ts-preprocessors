@@ -12,7 +12,7 @@ function App() {
       {isLoggedIn && <Navbar />}
       <Switch>
         <Route path='/' exact component={() => <StartPage setIsLoggedIn={setIsLoggedIn}/>}/>
-        <Route path='/teacher' exact component={TeacherHome}/>
+        <Route path='/teacher/home' exact component={TeacherHome}/>
       </Switch>
     </div>
   );

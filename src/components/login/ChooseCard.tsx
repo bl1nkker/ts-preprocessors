@@ -20,7 +20,7 @@ export const ChooseCard:React.FC<Props> = ({ image, description, buttonText, car
                 <p>{description}</p>
             </section>
             <section className='card-actions'>
-                <Link to='/teacher'><button onClick={() => setIsLoggedIn(true)}>{buttonText}</button></Link>
+                <Link to='/teacher/home'><button onClick={() => setIsLoggedIn(true)}>{buttonText}</button></Link>
             </section>
         </div>
     )
