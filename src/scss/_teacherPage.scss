@@ -1,6 +1,153 @@
 .teacher__container{
+    @include flex-box(column, flex-start, flex-start);
     width: 80%;
-    height: 80%;
+    height: 90%;
     background-color: $glass-second-color;
     border-radius: 30px;
+
+    .page__title,.page__content{margin: .5em auto; width: 90%; }
+    .page__title{
+        height: 10%;
+        h3{
+            font-size: $font-size-big;
+            font-weight: 200;
+            color: $primary-blue;
+        }
+    }
+
+    .page__content{
+        height: 80%;
+        .statistic__container{
+            width: 90%;
+            @include flex-box(row, space-between, center);
+            .title{
+                @include flex-box(column, space-between, flex-start);
+                .short-phrase{
+                    font-size: $font-size-big;
+                    font-weight: 900;
+                    color: $primary-yellow;
+                    .username{
+                        color: $primary-green;
+                    }
+                }
+                .long-phrase{
+                    font-size: $font-size-title;
+                    font-weight: 900;
+                    color: $primary-blue;
+                }
+            }
+            .statistic{
+                @include flex-box(column, space-between, flex-start);
+                p{
+                    font-size: $font-size-headers;
+                    color: $primary-yellow;
+                    font-weight: 900;
+                }
+                ul{
+                    list-style: none;
+                    li{
+                        font-size: $font-size-subheaders;
+                        color: $primary-blue;
+                        font-weight: 900;
+                        span{
+                            color: $primary-green;
+                        }
+                    }
+                }
+            }
+        }
+        .news__container{
+            @include flex-box(row, space-between, flex-start);
+            margin-top: 2em;
+            .news__students, .news__articles{
+                .news__title{
+                    color: $primary-yellow;
+                    font-size: $font-size-subtitle;
+                    font-weight: 900;
+                    margin: 0;
+                }
+                .news__items{
+                    @include flex-box(column, space-evenly, flex-start);
+                    list-style: none;
+                }
+            }
+            .news__students{
+                width: 40%;
+                .news__items{
+                    .news__student{
+                        width: 70%;
+                        @include flex-box(row, flex-start, flex-start);
+                        margin-top: 10px;
+                        padding: 5px 10px;
+                        background-color: change-color($color: $primary-blue, $alpha: 0.5);
+                        border-radius: 15px;
+                        
+                        &-avatar{
+                            img{
+                                height: 48px;
+                                width: 48px;
+                                border-radius: 50%;
+                                border: 3px solid $primary-yellow
+                            }
+                        }
+                        &-info{
+                            @include flex-box(column, space-between, flex-start);
+                            height: 54px;
+                            margin-left: 10px;
+                            .name{
+                                color:$font-primary-color;
+                            }
+                            .star{
+                                color: $primary-yellow;
+                            }
+                        }
+                    }
+                }
+            }
+            .news__articles{
+                
+                width: 60%;
+                .news__items{
+                    height: 100%;
+                    .news__article{
+                        @include flex-box(row, flex-start, flex-start);
+                        width: 80%;
+                        margin-top: 10px;
+                        padding: 5px 10px;
+                        background-color: change-color($color: $primary-blue, $alpha: 0.5);
+                        border-radius: 15px;
+                        
+                        &-avatar{
+                            img{
+                                height: 64px;
+                                width: 64px;
+                                border-radius: 50%;
+                                border: 3px solid $primary-yellow
+                            }
+                        }
+                        &-info{
+                            width: 100%;
+                            @include flex-box(column, space-between, flex-start);
+                            height: 54px;
+                            margin-left: 10px;
+                            .title{
+                                color:$font-primary-color;
+                                font-size: $font-size-headers;
+                                font-weight: 200;
+                            }
+                            .additional-info{
+                                width: 50%;
+                                @include flex-box(row, space-around, center);
+                                span{
+                                    font-size: $font-size-text;
+                                    color: $font-primary-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
 }

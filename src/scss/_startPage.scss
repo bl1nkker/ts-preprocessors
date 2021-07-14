@@ -18,8 +18,9 @@
         height: 50%;
         .card{
             @include flex-box(column, space-around, center);
-            height: 17em;
-            width: 17em;
+            height: 100%;
+            width: 20%;
+            padding: 2em;
             border-radius: 20px;
             box-shadow: 0 0 5px $border-color;
             &:nth-child(2){
@@ -60,6 +61,7 @@
                 }
             }
             &-actions{
+                margin-top: 10px;
                 button{
                     padding: 10px 2em;
                     border-radius: 10px;
@@ -74,4 +76,50 @@
             }
         }
     }
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .login__container{
+        .title{
+            height: 10%;
+            span{
+                font-size:24px;
+            }
+        }
+            .cards__container{
+                height: 85%;
+            @include flex-box(column, space-around, center);
+            .card{
+                height: 45%;
+                width: 70%;
+                padding: 0 5px;
+                &-image{
+                    img{
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+                &-info{
+                    width: 100%;
+                    h3{font-size: 16px;}
+                    p{font-size: 12px;}
+                }
+                &-actions{
+                    button{
+                        padding: 5px 10px;
+                        border-radius: 10px;
+                        color: $font-primary-color;
+                        font-size: 12px;
+                        opacity: .3;
+                        transition: .3s ease-in-out;
+                        &:hover{
+                            cursor: pointer;
+                            background-color: $primary-yellow;
+                        }
+                    }
+                }
+            }
+    }
+}
 }
