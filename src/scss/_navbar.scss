@@ -34,3 +34,19 @@
         }
     }
 }
+
+/* Responsive */
+@media (max-width: 700px){
+    .navbar__container{
+        width: 15%;
+        &-item{
+            width: 45%;;
+            a{
+                span{text-indent: 100%;
+                    white-space: nowrap;
+                    overflow: hidden;}
+            }
+        }
+    }
+    
+}

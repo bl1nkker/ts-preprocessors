@@ -147,7 +147,110 @@
                     }
                 }
             }
-            
         }
+    }
+}
+
+/* Responsive */
+@media (max-width: 540px){
+    .teacher__container{
+        .page__title{
+            h3{
+                font-size: 36px;
+            }
+        }
+        .page__content{
+            .statistic__container{
+                .title{
+                    .short-phrase{
+                        font-size: 24px;
+                        font-weight: 900;
+                    }
+                    .long-phrase{font-size: 18px;}
+                }
+                .statistic{
+                    @include flex-box(column, space-between, flex-start);
+                    p{font-size: 14px;}
+                    ul{
+                        li{
+                            font-size: 10px;
+                            span{
+                                color: $primary-green;
+                            }
+                        }
+                    }
+                }
+            }
+            .news__container{
+                @include flex-box(row, space-between, flex-start);
+                margin-top: 2em;
+                .news__students, .news__articles{
+                    .news__title{
+                        color: $primary-yellow;
+                        font-size: 16px;
+                        font-weight: 900;
+                        margin: 0;
+                    }
+                    .news__items{
+                        @include flex-box(column, space-evenly, flex-start);
+                        list-style: none;
+                    }
+                }
+                .news__students{
+                    .news__items{
+                        .news__student{
+                            width: 80%;
+                            height: 20%;
+                            @include flex-box(column, space-evenly, center);
+                            margin-top: 5px;
+                            padding: 5px;
+                            
+                            &-avatar{
+                                img{height: 24px;width: 24px;}
+                            }
+                            &-info{
+                                @include flex-box(column, center, flex-start);
+                                height: 20%;
+                                padding: 0;
+                                margin-left: 2px;
+                                .name{
+                                    color:$font-primary-color;
+                                    font-size: 8px;
+                                }
+                                .stars{
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                .news__articles{
+                    .news__items{
+                        .news__article{
+                            &-avatar{
+                                img{
+                                    display: none;
+                                }
+                            }
+                            &-info{
+                                .title{
+                                    font-size: 12px;
+                                    font-weight: 200;
+                                }
+                                .additional-info{
+                                    width: 100%;
+                                    @include flex-box(row, space-around, center);
+                                    span{
+                                        font-size: 6px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        
     }
 }

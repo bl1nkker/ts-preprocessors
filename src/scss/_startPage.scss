@@ -81,45 +81,23 @@
 /* Responsive */
 @media (max-width: 700px) {
     .login__container{
-        .title{
-            height: 10%;
-            span{
-                font-size:24px;
-            }
-        }
-            .cards__container{
-                height: 85%;
+        .title{ height: 10%; span{font-size:24px;} }
+        .cards__container{
+            height: 85%;
             @include flex-box(column, space-around, center);
             .card{
                 height: 45%;
                 width: 70%;
                 padding: 0 5px;
-                &-image{
-                    img{
-                        width: 50px;
-                        height: 50px;
-                    }
+                &-image{img{width: 48px;height: 48px;}
                 }
                 &-info{
                     width: 100%;
                     h3{font-size: 16px;}
                     p{font-size: 12px;}
                 }
-                &-actions{
-                    button{
-                        padding: 5px 10px;
-                        border-radius: 10px;
-                        color: $font-primary-color;
-                        font-size: 12px;
-                        opacity: .3;
-                        transition: .3s ease-in-out;
-                        &:hover{
-                            cursor: pointer;
-                            background-color: $primary-yellow;
-                        }
-                    }
-                }
+                &-actions{button{padding: 5px 10px;}}
             }
+        }
     }
-}
 }
