@@ -17,6 +17,7 @@
 
     .page__content{
         height: 80%;
+        /* Teacher Home page */
         .statistic__container{
             width: 90%;
             @include flex-box(row, space-between, center);
@@ -146,7 +147,71 @@
                         }
                     }
                 }
+            } 
+        }
+        /* Teacher Students Container */
+        .teacher__students__title{
+            font-size: 36px;
+            font-weight: 900;
+            .yellow__text{color: $primary-yellow}
+            .green__text{color: $primary-green}
+            .blue__text{color: $primary-blue}
+        }
+        .teacher__students__list{
+            @include flex-box(row, space-around, center);
+            height: 90%;
+            .student__card{
+                @include flex-box(column, space-evenly, center);
+                height: 80%;
+                width: 20%;
+                background-color: change-color($color: $primary-blue, $alpha: 0.5);
+                padding: 1em 2em;
+                border-radius: 30px;
+                border: 5px solid change-color($color: $primary-green, $alpha: 0.3);
+                .avatar{
+                    img{
+                        height: 120px;
+                        width:120px;
+                        border-radius: 50%;
+                        border: 3px solid $primary-yellow
+                    }
+                }
+                .info{
+                    width: 80%;
+                    .specialty, .gpa, .name{color: $font-primary-color; text-align: center;}
+                    .name{
+                        font-size: 36px;
+                        font-weight: 300;
+                    }
+                    .specialty{
+                        margin-top: 10px;
+                        font-size: 16px;
+                    }
+                    .gpa{
+                        margin-top: 10px;
+                        font-size: 12px;
+                    }
+                }
+                .actions{
+                    @include flex-box(row, space-between, center);
+                    width: 100%;
+                    margin-top: 1em;
+                    .btn-primary,
+                    .btn-secondary{
+                        width: 80px;
+                        height: 40px;
+                        
+                    }
+                    .btn-primary{
+                        @include button-primary($primary-green, $font-primary-color);
+                        
+                    }
+                    .btn-secondary{
+                        @include button-secondary($primary-green, $font-primary-color);
+                    }
+                }
             }
+        
         }
     }
 }

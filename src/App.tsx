@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom'
 import { TeacherHome } from './components/teacher/TeacherHome';
 import { useState } from 'react';
 import { Navbar } from './components/navbar/Navbar';
+import { TeacherStudents } from './components/teacher/TeacherStudents';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false)
@@ -13,6 +14,7 @@ function App() {
       <Switch>
         <Route path='/' exact component={() => <StartPage setIsLoggedIn={setIsLoggedIn}/>}/>
         <Route path='/teacher/home' exact component={TeacherHome}/>
+        <Route path='/teacher/students' exact component={TeacherStudents}/>
       </Switch>
     </div>
   );
