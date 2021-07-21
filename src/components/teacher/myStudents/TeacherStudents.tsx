@@ -1,5 +1,6 @@
 import React from 'react'
-import { StudentCard } from './StudentCard'
+import { StudentCardSummary } from './StudentCardSummary'
+import { StudentCardEmpty } from './StudentCardEmpty'
 
 interface Props {
     
@@ -18,9 +19,9 @@ export const TeacherStudents = (props: Props) => {
                 </div>
 
                 <div className='teacher__students__list'>
-                    <StudentCard />
-                    <StudentCard />
-                    <StudentCard />
+                    <StudentCardSummary />
+                    <StudentCardSummary />
+                    <StudentCardEmpty />
                 </div>
             </section>
         </div>

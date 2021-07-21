@@ -161,8 +161,8 @@
             @include flex-box(row, space-around, center);
             height: 90%;
             .student__card{
-                @include flex-box(column, space-evenly, center);
-                height: 80%;
+                @include flex-box(column, flex-start, center);
+                height: 85%;
                 width: 20%;
                 background-color: change-color($color: $primary-blue, $alpha: 0.5);
                 padding: 1em 2em;
@@ -170,10 +170,31 @@
                 border: 5px solid change-color($color: $primary-green, $alpha: 0.3);
                 .avatar{
                     img{
+                        cursor: pointer;
                         height: 120px;
                         width:120px;
                         border-radius: 50%;
-                        border: 3px solid $primary-yellow
+                        border: 3px solid $primary-yellow;
+                        transition: .3s ease-in-out;
+                        &:hover{
+                            transform: scale(1.1);
+                        }
+                    }
+                    button{
+                        cursor: pointer;
+                        border-radius: 50%;
+                        .empty__icon{
+                            font-size: 125px;
+                            color: $glass-second-color;
+                            transition: .3s ease-in-out;
+                        }
+
+                        &:hover{
+                            .empty__icon{
+                                color: change-color($color: $primary-green, $alpha:0.4);
+                                transform: scale(1.1);
+                            }
+                        }
                     }
                 }
                 .info{
@@ -195,7 +216,7 @@
                 .actions{
                     @include flex-box(row, space-between, center);
                     width: 100%;
-                    margin-top: 1em;
+                    margin: 1em 0;
                     .btn-primary,
                     .btn-secondary{
                         width: 80px;

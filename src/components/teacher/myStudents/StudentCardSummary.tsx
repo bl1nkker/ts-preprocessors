@@ -1,10 +1,11 @@
 import React from 'react'
+import { StudentType } from '../../../types'
 
 interface Props {
-    
+    student?: StudentType
 }
 
-export const StudentCard = (props: Props) => {
+export const StudentCardSummary = (props: Props) => {
     return (
         <div className='student__card'>
             <section className='avatar'>
