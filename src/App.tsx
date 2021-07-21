@@ -1,10 +1,10 @@
 import './css/style.css'
 import { StartPage } from './components/login/StartPage';
 import { Switch, Route } from 'react-router-dom'
-import { TeacherHome } from './components/teacher/TeacherHome';
+import { TeacherHome } from './components/teacher/home/TeacherHome';
 import { useState } from 'react';
 import { Navbar } from './components/navbar/Navbar';
-import { TeacherStudents } from './components/teacher/TeacherStudents';
+import { TeacherStudents } from './components/teacher/myStudents/TeacherStudents';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false)

@@ -17,7 +17,7 @@ export const TeacherHome = (props: Props) => {
                 <section className='page__content'>
                     <div className='statistic__container'>
                         <div className='title'>
-                            <p className='short-phrase'>GREAT, <span className='username'>bl1nk</span></p>
+                            <p className='short-phrase'>GREAT, <span className='username'>Арлан</span></p>
                             <p className='long-phrase'>you do your best!</p>
                         </div>
                         <div className='statistic'>

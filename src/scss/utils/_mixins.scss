@@ -23,7 +23,7 @@
     cursor: pointer;
     transition: .3s ease-in-out;
     &:hover{
-        transform: scale(1.1);
+        // transform: scale(1.1);
         background-color: $primary-yellow;
     }
 }
@@ -37,7 +37,7 @@
     cursor: pointer;
     transition: .3s ease-in-out;
     &:hover{
-        transform: scale(1.1);
+        // transform: scale(1.1);
         background-color: $primary-yellow;
         border: none;
     }
