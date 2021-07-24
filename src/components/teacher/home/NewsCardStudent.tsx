@@ -1,18 +1,20 @@
 import React from 'react'
 import StarIcon from '@material-ui/icons/Star';
+import { StudentType } from '../../../types';
+import { Link } from 'react-router-dom';
 
 interface Props {
-    
+    student:StudentType
 }
 
-export const NewsCardStudent = (props: Props) => {
+export const NewsCardStudent:React.FC<Props> = ({ student }) => {
     return (
         <div className='news__student'>
             <div className='news__student-avatar'>
-                <img src="https://www.kindpng.com/picc/m/236-2362818_anime-sempai-animegirl-heart-kawaii-cute-anime-girl.png" alt="kawaii" />
+                <img src={student.avatar} alt="kawaii" />
             </div>
             <div className='news__student-info'>
-                <span className='name'>Mariya</span>
+                <span className='name'>{student.name}</span>
                 <div className='stars'>
                     <StarIcon className='star' fontSize='small' />
                     <StarIcon className='star' fontSize='small' />
@@ -20,6 +22,12 @@ export const NewsCardStudent = (props: Props) => {
                     <StarIcon className='star' fontSize='small' />
                     <StarIcon className='star' fontSize='small' />
                 </div>
+            </div>
+            <div>
+                {/* Refactor this */}
+                <Link to={`/teacher/students/${student.id}`}>
+                    <button className=''>Click</button>
+                </Link>
             </div>
         </div>
     )

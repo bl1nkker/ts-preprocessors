@@ -1,342 +1,361 @@
-.teacher__container{
-    @include flex-box(column, flex-start, flex-start);
-    width: 80%;
-    height: 90%;
-    background-color: $glass-second-color;
-    border-radius: 30px;
+.teacher__container {
+  @include flex-box(column, flex-start, flex-start);
+  width: 80%;
+  height: 90%;
+  background-color: $glass-second-color;
+  border-radius: 30px;
 
-    .page__title,.page__content{margin: .5em auto; width: 90%; }
-    .page__title{
-        height: 10%;
-        h3{
-            font-size: $font-size-big;
-            font-weight: 200;
+  .page__title,
+  .page__content {
+    margin: 0.5em auto;
+    width: 90%;
+  }
+  .page__title {
+    height: 10%;
+    h3 {
+      font-size: $font-size-big;
+      font-weight: 200;
+      color: $primary-blue;
+    }
+  }
+
+  .page__content {
+    height: 80%;
+    /* Teacher Home page */
+    .statistic__container {
+      width: 90%;
+      @include flex-box(row, space-between, center);
+      .title {
+        @include flex-box(column, space-between, flex-start);
+        .short-phrase {
+          font-size: $font-size-big;
+          font-weight: 900;
+          color: $primary-yellow;
+          .username {
+            color: $primary-green;
+          }
+        }
+        .long-phrase {
+          font-size: $font-size-title;
+          font-weight: 900;
+          color: $primary-blue;
+        }
+      }
+      .statistic {
+        @include flex-box(column, space-between, flex-start);
+        p {
+          font-size: $font-size-headers;
+          color: $primary-yellow;
+          font-weight: 900;
+        }
+        ul {
+          list-style: none;
+          li {
+            font-size: $font-size-subheaders;
             color: $primary-blue;
-        }
-    }
-
-    .page__content{
-        height: 80%;
-        /* Teacher Home page */
-        .statistic__container{
-            width: 90%;
-            @include flex-box(row, space-between, center);
-            .title{
-                @include flex-box(column, space-between, flex-start);
-                .short-phrase{
-                    font-size: $font-size-big;
-                    font-weight: 900;
-                    color: $primary-yellow;
-                    .username{
-                        color: $primary-green;
-                    }
-                }
-                .long-phrase{
-                    font-size: $font-size-title;
-                    font-weight: 900;
-                    color: $primary-blue;
-                }
-            }
-            .statistic{
-                @include flex-box(column, space-between, flex-start);
-                p{
-                    font-size: $font-size-headers;
-                    color: $primary-yellow;
-                    font-weight: 900;
-                }
-                ul{
-                    list-style: none;
-                    li{
-                        font-size: $font-size-subheaders;
-                        color: $primary-blue;
-                        font-weight: 900;
-                        span{
-                            color: $primary-green;
-                        }
-                    }
-                }
-            }
-        }
-        .news__container{
-            @include flex-box(row, space-between, flex-start);
-            margin-top: 2em;
-            .news__students, .news__articles{
-                .news__title{
-                    color: $primary-yellow;
-                    font-size: $font-size-subtitle;
-                    font-weight: 900;
-                    margin: 0;
-                }
-                .news__items{
-                    @include flex-box(column, space-evenly, flex-start);
-                    list-style: none;
-                }
-            }
-            .news__students{
-                width: 40%;
-                .news__items{
-                    .news__student{
-                        width: 70%;
-                        @include flex-box(row, flex-start, flex-start);
-                        margin-top: 10px;
-                        padding: 5px 10px;
-                        background-color: change-color($color: $primary-blue, $alpha: 0.5);
-                        border-radius: 15px;
-                        
-                        &-avatar{
-                            img{
-                                height: 48px;
-                                width: 48px;
-                                border-radius: 50%;
-                                border: 3px solid $primary-yellow
-                            }
-                        }
-                        &-info{
-                            @include flex-box(column, space-between, flex-start);
-                            height: 54px;
-                            margin-left: 10px;
-                            .name{
-                                color:$font-primary-color;
-                            }
-                            .star{
-                                color: $primary-yellow;
-                            }
-                        }
-                    }
-                }
-            }
-            .news__articles{
-                
-                width: 60%;
-                .news__items{
-                    height: 100%;
-                    .news__article{
-                        @include flex-box(row, flex-start, flex-start);
-                        width: 80%;
-                        margin-top: 10px;
-                        padding: 5px 10px;
-                        background-color: change-color($color: $primary-blue, $alpha: 0.5);
-                        border-radius: 15px;
-                        
-                        &-avatar{
-                            img{
-                                height: 64px;
-                                width: 64px;
-                                border-radius: 50%;
-                                border: 3px solid $primary-yellow
-                            }
-                        }
-                        &-info{
-                            width: 100%;
-                            @include flex-box(column, space-between, flex-start);
-                            height: 54px;
-                            margin-left: 10px;
-                            .title{
-                                color:$font-primary-color;
-                                font-size: $font-size-headers;
-                                font-weight: 200;
-                            }
-                            .additional-info{
-                                width: 50%;
-                                @include flex-box(row, space-around, center);
-                                span{
-                                    font-size: $font-size-text;
-                                    color: $font-primary-color;
-                                }
-                            }
-                        }
-                    }
-                }
-            } 
-        }
-        /* Teacher Students Container */
-        .teacher__students__title{
-            font-size: 36px;
             font-weight: 900;
-            .yellow__text{color: $primary-yellow}
-            .green__text{color: $primary-green}
-            .blue__text{color: $primary-blue}
-        }
-        .teacher__students__list{
-            @include flex-box(row, space-around, center);
-            height: 90%;
-            .student__card{
-                @include flex-box(column, flex-start, center);
-                height: 85%;
-                width: 20%;
-                background-color: change-color($color: $primary-blue, $alpha: 0.5);
-                padding: 1em 2em;
-                border-radius: 30px;
-                border: 5px solid change-color($color: $primary-green, $alpha: 0.3);
-                .avatar{
-                    img{
-                        cursor: pointer;
-                        height: 120px;
-                        width:120px;
-                        border-radius: 50%;
-                        border: 3px solid $primary-yellow;
-                        transition: .3s ease-in-out;
-                        &:hover{
-                            transform: scale(1.1);
-                        }
-                    }
-                    button{
-                        cursor: pointer;
-                        border-radius: 50%;
-                        .empty__icon{
-                            font-size: 125px;
-                            color: $glass-second-color;
-                            transition: .3s ease-in-out;
-                        }
-
-                        &:hover{
-                            .empty__icon{
-                                color: change-color($color: $primary-green, $alpha:0.4);
-                                transform: scale(1.1);
-                            }
-                        }
-                    }
-                }
-                .info{
-                    width: 80%;
-                    .specialty, .gpa, .name{color: $font-primary-color; text-align: center;}
-                    .name{
-                        font-size: 36px;
-                        font-weight: 300;
-                    }
-                    .specialty{
-                        margin-top: 10px;
-                        font-size: 16px;
-                    }
-                    .gpa{
-                        margin-top: 10px;
-                        font-size: 12px;
-                    }
-                }
-                .actions{
-                    @include flex-box(row, space-between, center);
-                    width: 100%;
-                    margin: 1em 0;
-                    .btn-primary,
-                    .btn-secondary{
-                        width: 80px;
-                        height: 40px;
-                        
-                    }
-                    .btn-primary{
-                        @include button-primary($primary-green, $font-primary-color);
-                        
-                    }
-                    .btn-secondary{
-                        @include button-secondary($primary-green, $font-primary-color);
-                    }
-                }
+            span {
+              color: $primary-green;
             }
-        
+          }
         }
+      }
     }
+    .news__container {
+      @include flex-box(row, space-between, flex-start);
+      margin-top: 2em;
+      .news__students,
+      .news__articles {
+        .news__title {
+          color: $primary-yellow;
+          font-size: $font-size-subtitle;
+          font-weight: 900;
+          margin: 0;
+        }
+        .news__items {
+          @include flex-box(column, space-evenly, flex-start);
+          list-style: none;
+        }
+      }
+      .news__students {
+        width: 40%;
+        .news__items {
+          .news__student {
+            width: 70%;
+            @include flex-box(row, flex-start, flex-start);
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: change-color($color: $primary-blue, $alpha: 0.5);
+            border-radius: 15px;
+
+            &-avatar {
+              img {
+                height: 48px;
+                width: 48px;
+                border-radius: 50%;
+                border: 3px solid $primary-yellow;
+              }
+            }
+            &-info {
+              @include flex-box(column, space-between, flex-start);
+              height: 54px;
+              margin-left: 10px;
+              .name {
+                color: $font-primary-color;
+              }
+              .star {
+                color: $primary-yellow;
+              }
+            }
+          }
+        }
+      }
+      .news__articles {
+        width: 60%;
+        .news__items {
+          height: 100%;
+          .news__article {
+            @include flex-box(row, flex-start, flex-start);
+            width: 80%;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: change-color($color: $primary-blue, $alpha: 0.5);
+            border-radius: 15px;
+
+            &-avatar {
+              img {
+                height: 64px;
+                width: 64px;
+                border-radius: 50%;
+                border: 3px solid $primary-yellow;
+              }
+            }
+            &-info {
+              width: 100%;
+              @include flex-box(column, space-between, flex-start);
+              height: 54px;
+              margin-left: 10px;
+              .title {
+                color: $font-primary-color;
+                font-size: $font-size-headers;
+                font-weight: 200;
+              }
+              .additional-info {
+                width: 50%;
+                @include flex-box(row, space-around, center);
+                span {
+                  font-size: $font-size-text;
+                  color: $font-primary-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    /* Teacher Students Container */
+    .teacher__students__title {
+      font-size: 36px;
+      font-weight: 900;
+      .yellow__text {
+        color: $primary-yellow;
+      }
+      .green__text {
+        color: $primary-green;
+      }
+      .blue__text {
+        color: $primary-blue;
+      }
+    }
+    .teacher__students__list {
+      @include flex-box(row, space-around, center);
+      height: 90%;
+      .student__card {
+        @include flex-box(column, flex-start, center);
+        height: 85%;
+        width: 20%;
+        background-color: change-color($color: $primary-blue, $alpha: 0.5);
+        padding: 1em 2em;
+        border-radius: 30px;
+        border: 5px solid change-color($color: $primary-green, $alpha: 0.3);
+        .avatar {
+          img {
+            cursor: pointer;
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            border: 3px solid $primary-yellow;
+            transition: 0.3s ease-in-out;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+          button {
+            cursor: pointer;
+            border-radius: 50%;
+            .empty__icon {
+              font-size: 125px;
+              color: $glass-second-color;
+              transition: 0.3s ease-in-out;
+            }
+
+            &:hover {
+              .empty__icon {
+                color: change-color($color: $primary-green, $alpha: 0.4);
+                transform: scale(1.1);
+              }
+            }
+          }
+        }
+        .info {
+          width: 80%;
+          height: 50%;
+          .specialty,
+          .gpa,
+          .name {
+            color: $font-primary-color;
+            text-align: center;
+          }
+          .name {
+            font-size: 36px;
+            font-weight: 300;
+          }
+          .specialty {
+            margin-top: 10px;
+            font-size: 16px;
+          }
+          .gpa {
+            margin-top: 10px;
+            font-size: 12px;
+          }
+        }
+        .actions {
+          @include flex-box(row, space-between, center);
+          width: 100%;
+          //   margin: 1em 0;
+          .btn-primary,
+          .btn-secondary {
+            width: 80px;
+            height: 40px;
+          }
+          .btn-primary {
+            @include button-primary($primary-green, $font-primary-color);
+          }
+          .btn-secondary {
+            @include button-secondary($primary-green, $font-primary-color);
+          }
+        }
+      }
+    }
+  }
 }
 
 /* Responsive */
-@media (max-width: 540px){
-    .teacher__container{
-        .page__title{
-            h3{
-                font-size: 36px;
-            }
-        }
-        .page__content{
-            .statistic__container{
-                .title{
-                    .short-phrase{
-                        font-size: 24px;
-                        font-weight: 900;
-                    }
-                    .long-phrase{font-size: 18px;}
-                }
-                .statistic{
-                    @include flex-box(column, space-between, flex-start);
-                    p{font-size: 14px;}
-                    ul{
-                        li{
-                            font-size: 10px;
-                            span{
-                                color: $primary-green;
-                            }
-                        }
-                    }
-                }
-            }
-            .news__container{
-                @include flex-box(row, space-between, flex-start);
-                margin-top: 2em;
-                .news__students, .news__articles{
-                    .news__title{
-                        color: $primary-yellow;
-                        font-size: 16px;
-                        font-weight: 900;
-                        margin: 0;
-                    }
-                    .news__items{
-                        @include flex-box(column, space-evenly, flex-start);
-                        list-style: none;
-                    }
-                }
-                .news__students{
-                    .news__items{
-                        .news__student{
-                            width: 80%;
-                            height: 20%;
-                            @include flex-box(column, space-evenly, center);
-                            margin-top: 5px;
-                            padding: 5px;
-                            
-                            &-avatar{
-                                img{height: 24px;width: 24px;}
-                            }
-                            &-info{
-                                @include flex-box(column, center, flex-start);
-                                height: 20%;
-                                padding: 0;
-                                margin-left: 2px;
-                                .name{
-                                    color:$font-primary-color;
-                                    font-size: 8px;
-                                }
-                                .stars{
-                                    display: none;
-                                }
-                            }
-                        }
-                    }
-                }
-                .news__articles{
-                    .news__items{
-                        .news__article{
-                            &-avatar{
-                                img{
-                                    display: none;
-                                }
-                            }
-                            &-info{
-                                .title{
-                                    font-size: 12px;
-                                    font-weight: 200;
-                                }
-                                .additional-info{
-                                    width: 100%;
-                                    @include flex-box(row, space-around, center);
-                                    span{
-                                        font-size: 6px;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        
+@media (max-width: 540px) {
+  .teacher__container {
+    .page__title {
+      h3 {
+        font-size: 36px;
+      }
     }
+    .page__content {
+      .statistic__container {
+        .title {
+          .short-phrase {
+            font-size: 24px;
+            font-weight: 900;
+          }
+          .long-phrase {
+            font-size: 18px;
+          }
+        }
+        .statistic {
+          @include flex-box(column, space-between, flex-start);
+          p {
+            font-size: 14px;
+          }
+          ul {
+            li {
+              font-size: 10px;
+              span {
+                color: $primary-green;
+              }
+            }
+          }
+        }
+      }
+      .news__container {
+        @include flex-box(row, space-between, flex-start);
+        margin-top: 2em;
+        .news__students,
+        .news__articles {
+          .news__title {
+            color: $primary-yellow;
+            font-size: 16px;
+            font-weight: 900;
+            margin: 0;
+          }
+          .news__items {
+            @include flex-box(column, space-evenly, flex-start);
+            list-style: none;
+          }
+        }
+        .news__students {
+          .news__items {
+            .news__student {
+              width: 80%;
+              height: 20%;
+              @include flex-box(column, space-evenly, center);
+              margin-top: 5px;
+              padding: 5px;
+
+              &-avatar {
+                img {
+                  height: 24px;
+                  width: 24px;
+                }
+              }
+              &-info {
+                @include flex-box(column, center, flex-start);
+                height: 20%;
+                padding: 0;
+                margin-left: 2px;
+                .name {
+                  color: $font-primary-color;
+                  font-size: 8px;
+                }
+                .stars {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+        .news__articles {
+          .news__items {
+            .news__article {
+              &-avatar {
+                img {
+                  display: none;
+                }
+              }
+              &-info {
+                .title {
+                  font-size: 12px;
+                  font-weight: 200;
+                }
+                .additional-info {
+                  width: 100%;
+                  @include flex-box(row, space-around, center);
+                  span {
+                    font-size: 6px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
